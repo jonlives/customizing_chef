@@ -1,0 +1,1 @@
+testcookbook_mixerate "magical LWRP and HWRP mixing"

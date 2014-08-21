@@ -1,0 +1,1 @@
+awesomeator_prepare "foo"

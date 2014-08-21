@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+if [ $# -ne 1 ]
+then
+    echo "Usage: 'test_environment start|stop'"
+    exit $E_BADARGS
+fi
+
+case "$1" in
+start)
+    echo "Starting Chef-Zero"
+    chef-zero &
+    echo "Loading playground data"
+    cd /tmp/part4_examples/chef-zero/playground
+    knife upload . -c /tmp/part4_examples/knife.rb
+    echo "Test environment ready to rock!"
+    ;;
+stop)
+    echo "Stopping Chef-Zero"
+    ps -ef | grep /usr/bin/chef-zero | grep -v grep | \
+    awk '{print $2}' | xargs kill -9
+    ;;
+esac
