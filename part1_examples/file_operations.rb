@@ -25,9 +25,9 @@ module Examples
       end
     end
 # methods of our FileLogger object
-    def file_writeable?
+    def file_writable?
 # Return true if our created file is writeable, false if not
-      File.writeable?(@log_file)
+      File.writable?(@log_file)
     end
     def write_to_log(message)
 # Open our file in "append" mode and write the message string to it
@@ -45,7 +45,7 @@ end
 # Initialize our object; note that we're specifying Module::Class
 puts "Creating log file /tmp/testfile"
 file_logger = Examples::FileLogger.new("/tmp/testfile")
-puts "file writeable: #{file_logger.file_writeable?}"
+puts "file writable: #{file_logger.file_writable?}"
 puts "Writing to log file"
 file_logger.write_to_log ("Test log message")
 puts "Clearing log file"
