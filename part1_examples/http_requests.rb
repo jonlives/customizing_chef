@@ -32,7 +32,7 @@ module Examples
     def initialize(url)
 # Call the setter method for the url attribute to set it
 # to the value passed to this method
-      @self.url = url
+      self.url = url
 # When we're sure our URL is valid, create a Net::HTTP object
 # and assign it to the @http_object class instance variable
       @http_object = Net::HTTP.new(@url.host, @url.port)
